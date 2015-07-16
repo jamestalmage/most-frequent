@@ -29,13 +29,13 @@ fcp.add = function add(str) {
 };
 
 fcp.most = function(str) {
-  return this._most.indexOf(str) !== -1;
+  return this._most.indexOf(String(str)) !== -1;
 };
 
 fcp.uniquelyMost = function(str) {
-  return this._most.length === 1 && this._most[0] === str;
+  return this._most.length === 1 && this._most[0] === String(str);
 };
 
 fcp.count = function(str) {
-  return this.dict[str] || 0;
+  return this.dict[String(str)] || 0;
 };

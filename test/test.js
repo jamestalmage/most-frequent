@@ -48,6 +48,8 @@ describe('frequency-counter', function() {
   it('works with numbers', function() {
     fc.add(1);
     assert.strictEqual(fc.count(1), 1);
+    assert.strictEqual(fc.most(1), true);
+    assert.strictEqual(fc.uniquelyMost(1), true);
     fc.add(1);
     assert.strictEqual(fc.count(1), 2);
     fc.add(1);
