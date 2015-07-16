@@ -56,13 +56,17 @@ Increment the count of `value` by one.
 Returns the count for `value`. (how many times `add(..)` has been called with that same value).
 Should be a string or a number.
 
-#### m.most(value)
+#### f.most(value)
 
 returns `true` if `value` has a `count` *greater than or equal to* all other values.
 
-#### m.uniquelyMost(value)
+#### f.uniquelyMost(value)
 
 returns `true` if `value` has a `count` *greater than* all other values.
+
+#### f.universal
+
+true `true` if every call to `add` has been with the same value.
 
 ## License
 

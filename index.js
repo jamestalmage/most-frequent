@@ -8,17 +8,21 @@ function FrequencyCounter() {
   this.dict = Object.create(null);
   this.highest = 0;
   this._most = [];
+  this.universal = true;
 }
 
 var fcp = FrequencyCounter.prototype;
 
 fcp.add = function add(str) {
+  str = String(str);
   var count = this.dict[str] = this.count(str) + 1;
   if (count === this.highest) {
     this._most.push(str);
+    this.universal = false;
   } else if (count > this.highest) {
     this._most = [str];
   } else {
+    this.universal = this.universal && this._most.length === 1 && this._most[0] === str;
     return;
   }
   this.highest = count;

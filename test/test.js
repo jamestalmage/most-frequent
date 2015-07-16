@@ -58,4 +58,24 @@ describe('frequency-counter', function() {
     fc.add(1);
     assert.strictEqual(fc.count(1), 4);
   });
+
+  it('universal', function() {
+    assert.strictEqual(fc.universal, true);
+    fc.add(1);
+    assert.strictEqual(fc.universal, true);
+    fc.add(1);
+    assert.strictEqual(fc.universal, true);
+    fc.add(1);
+    assert.strictEqual(fc.universal, true);
+    fc.add(2);
+    assert.strictEqual(fc.universal, false);
+  });
+
+  it('universal', function() {
+    assert.strictEqual(fc.universal, true);
+    fc.add(1);
+    assert.strictEqual(fc.universal, true);
+    fc.add(2);
+    assert.strictEqual(fc.universal, false);
+  });
 });
